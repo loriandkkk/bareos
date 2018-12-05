@@ -31,16 +31,16 @@ services:
     environment:
       - BAREOS_SD_PASSWORD=password
 
-  bareos-fd:
-    image: barcus/bareos-client:17.2-ubuntu
-    volumes:
-      - /share/Public/bareos/config/client:/etc/bareos
-      - /share/Public/bareos/data/director:/var/lib/bareos-director #(required for MyCatalog backup)
-    environment:
-      - BAREOS_FD_PASSWORD=password
+#  bareos-fd:
+#    image: barcus/bareos-client:17.2-ubuntu
+#    volumes:
+#      - /share/Public/bareos/config/client:/etc/bareos
+#      - /share/Public/bareos/data/director:/var/lib/bareos-director #(required for MyCatalog backup)
+#    environment:
+#      - BAREOS_FD_PASSWORD=password
 
-  bareos-fd-mysql:
-    image: wcen/bareos-fd-mysql:latest
+  bareos-fd:
+    image: wcen/bareos-fd:17.2-plugins
     volumes:
       - /share/Public/bareos/config/mysql-client:/etc/bareos
     environment:

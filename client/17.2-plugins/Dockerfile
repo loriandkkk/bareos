@@ -13,7 +13,7 @@ RUN \
 RUN \
   yum install -y \
     epel-release \
-    python-pyvmomi \
+    python-pyvmomi python-requests python-six \
     e2fsprogs libuuid-devel openssl-devel perl-devel perl-Crypt-SSLeay \
     perl-XML-LibXML libncurses.so.5 perl-Crypt-SSLeay && \
   yum install -y \
