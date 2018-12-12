@@ -21,8 +21,12 @@ RUN \
     bareos-filedaemon-python-plugin \
     bareos-contrib-filedaemon-python-plugin-mysql \
     mysql \
-    bareos-vmware-plugin \
+    python34 python34-pip \
+    bareos-vmware-plugin && \
   yum clean all
+
+RUN \
+  pip3 install requests
 
 COPY VMware-vSphere-CLI-6.5.0-4566394.x86_64.tar.gz /root/vcli.tar.gz
 COPY VMware-ovftool-4.3.0-7948156-lin.x86_64.bundle /tmp/
